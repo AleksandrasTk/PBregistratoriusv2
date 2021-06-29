@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap');
+
+:root {
+  --bg-color-dark: #10101c;
+  --bg-color-light: #faf3eb;
+  --primary-color: #00956b;
+  --danger-color: #fc0120;
+  --success-color: #00ce42;
+  --font-light: #10101c;
+  --font-dark: #faf3eb;
+  --navbar-1: #1d1d2c;
+  --navbar-2: #111;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  font-size: 1rem;
+  color: var(--font-dark);
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Staatliches', cursive;
+}
+
+.main-heading {
+  font-size: 26px;
+  /* color: ; */
+}
+
+.main-heading-2 {
+  font-size: 22px;
+  /* color: ; */
+}
+.main-heading-3 {
+  font-size: 20px;
+  /* color: ; */
+}
+
+.container {
+  margin: auto;
+  padding: 0 10px;
+  min-width: 1200px;
+}
+
+input {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--font-light);
+}
