@@ -3,6 +3,7 @@ const router = express.Router();
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const config = require("config");
+const auth = require("../middleware/auth");
 const { check, validationResult } = require("express-validator");
 
 const Coach = require("../models/Coach");
@@ -65,8 +66,14 @@ router.post(
 // @Desc     Get a logged in Coach using Token
 // @access   Private
 
-router.get("/", (req, res) => {
-  res.send("Logged in Coach");
+router.get("/", auth, async (req, res) => {
+  try {
+    const coach = await Coach.findById(req.coach.id).select("-password");
+    res.json(coach);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: `server error` });
+  }
 });
 
 module.exports = router;
