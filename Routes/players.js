@@ -72,16 +72,64 @@ router.post(
 // @Desc     Update a Player
 // @access   Private
 
-router.put("/:id", (req, res) => {
-  res.send("Update a Player");
+router.put("/:id", auth, async (req, res) => {
+  const { name, playerNumber, role, status } = req.body;
+  const playerField = {};
+
+  if (name) playerField.name = name;
+  if (playerNumber) playerField.playerNumber = playerNumber;
+  if (role) playerField.role = role;
+  if (status) playerField.status = status;
+
+  try {
+    let player = await Player.findById(req.params.id);
+
+    // Check a player in coach squad
+    if (!player) {
+      return res.status(401).json({ msg: "Player not found" });
+    }
+
+    // Make sure no one else edits players other than his/her coach
+    if (player.coach.toString() !== req.coach.id) {
+      return res.status(401).json({ msg: "Not Authorized" });
+    }
+
+    player = await Player.findByIdAndUpdate(
+      req.params.id,
+      { $set: playerField },
+      { new: true }
+    );
+    res.json(player);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: "server error" });
+  }
 });
 
 // @Route    DELETE /api/players/:id
 // @Desc     Delete a Player
 // @access   Private
 
-router.delete("/:id", (req, res) => {
-  res.send("Delete a added Player");
+router.delete("/:id", auth, async (req, res) => {
+  try {
+    let player = await Player.findById(req.params.id);
+
+    // Check a player in coach squad
+    if (!player) {
+      return res.status(401).json({ msg: "Player not found" });
+    }
+
+    // Make sure no one else edits players other than his/her coach
+    if (player.coach.toString() !== req.coach.id) {
+      return res.status(401).json({ msg: "Not Authorized" });
+    }
+
+    await Player.findByIdAndRemove(req.params.id);
+    res.json({ msg: "Player Removed" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: "server error" });
+  }
 });
 
 module.exports = router;
