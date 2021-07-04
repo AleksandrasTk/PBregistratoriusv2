@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
 
 const PlayerSchema = mongoose.Schema({
+  coach: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "coaches",
+  },
   name: {
     type: String,
     required: true,
@@ -8,7 +12,7 @@ const PlayerSchema = mongoose.Schema({
   playerNumber: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
   },
   role: {
     type: String,
