@@ -1,0 +1,30 @@
+.navigation {
+  background-color: yellow;
+  height: 150px;
+}
+
+.navbar {
+  background-color: rebeccapurple;
+  height: 50%;
+  width: 90%;
+  margin: auto;
+}
+
+.nav-logo {
+  height: 100%;
+  background-color: red;
+  width: 200px;
+  display: grid;
+  place-items: center;
+}
+
+.nav-logo img {
+  width: 100%;
+}
+
+.tabs {
+  background-color: lawngreen;
+  height: 50%;
+  width: 90%;
+  margin: auto;
+}
