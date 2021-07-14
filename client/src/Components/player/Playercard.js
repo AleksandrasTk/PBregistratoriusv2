@@ -21,7 +21,9 @@ const Playercard = ({ player }) => {
               <p>{status}</p>
             </div>
           </div>
-          <button className='card-edit'>Edit</button>
+          <button className='card-edit'>
+            <h1>Edit</h1>
+          </button>
           <button className='card-delete'> X </button>
         </div>
         <div className='player-number'>

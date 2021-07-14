@@ -4,8 +4,8 @@
   "description": "Squad management Web app",
   "main": "server.js",
   "scripts": {
-    "start": "node sever.js",
-    "server": "nodemon sever.js",
+    "start": "node server",
+    "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "clientinstall": "npm install --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
