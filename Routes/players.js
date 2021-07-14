@@ -49,8 +49,16 @@ router.post(
     }
 
     const { name, playerNumber, role, status } = req.body;
-
+   
+    
     try {
+     
+
+    let player1 = await Player.findOne({playerNumber});
+      if(player1)
+    {
+      return res.status(400).json({msg:"Player number already exists"});
+    }
       const newPlayer = new Player({
         name,
         playerNumber,
@@ -58,6 +66,7 @@ router.post(
         status,
         coach: req.coach.id,
       });
+      
 
       const player = await newPlayer.save();
       res.json(player);
