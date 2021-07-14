@@ -1,5 +1,5 @@
-import React from 'react';
-import logo from '../../img/Logo-H.png';
+import React from "react";
+import logo from "../../img/Logo-H.png";
 
 const Navbar = () => {
   return (
@@ -13,15 +13,14 @@ const Navbar = () => {
           <a href='#!'>Register</a>
         </div>
       </nav>
-      
-        <div className='container tabs'>
-          <div className='nav-tabs'>
-            <a href='#!'>Squad</a> &nbsp; | &nbsp;
-            <a href='#!'>PLaying XI</a>
-          </div>
+
+      <div className='container tabs'>
+        <div className='nav-tabs'>
+          <a href='#!'>Squad</a> &nbsp; | &nbsp;
+          <a href='#!'>PLaying XI</a>
         </div>
-      </nav>
-    
+      </div>
+    </nav>
   );
 };
 

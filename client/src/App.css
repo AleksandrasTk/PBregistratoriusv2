@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap");
 
 :root {
   --bg-color-dark: #10101c;
@@ -20,7 +20,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.4;
   font-size: 1rem;
   color: var(--font-dark);
@@ -31,7 +31,8 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Staatliches', cursive;
+  font-weight: lighter;
+  font-family: "Staatliches", cursive;
 }
 
 .main-heading {
