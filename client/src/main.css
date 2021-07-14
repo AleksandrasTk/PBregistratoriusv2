@@ -1,10 +1,10 @@
 .navigation {
-  background-color: yellow;
+  margin:1;
   height: 150px;
 }
 
 .navbar {
-  background-color: rebeccapurple;
+  background-color: #1d1d2c;
   height: 50%;
   width: 100vw;
   padding: 0 5%;
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: darkgreen;
+  background-color:  #1d1d2c;
 }
 
 .nav-auth a {
@@ -37,14 +37,157 @@
 .nav-logo img {
   width: 100%;
 }
-
+.sticky
+{
+  position:fixed;
+  top:0;
+  width:100%;
+}
 .tabs {
-  background-color: lawngreen;
-  height: 50%;
-  width: 100%;
+  background-color: black;
+  position: relative;
+  width: 100vw;
+  height: 30%;
+  
 }
 
 .nav-tabs {
   height: 100%;
   width: 30%;
+  left:50%;
+  transform: translate(-50%,0);
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+ 
+  
+}
+.nav-tabs a{
+  color:white;
+ 
+}
+.add-form
+{
+  width: 400px;
+  margin:auto;
+  height: 500px;
+  padding: 40px;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  background-color: #faf3eb;
+  color:var(--primary-color);
+
+}
+.player-form
+{
+  height:80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.card {
+  height: 400px;
+  width: 400px;
+  background-color: #00956b;
+  position: relative;
+  border-radius: 25px;
+  color: white;
+  font-size: 20px;
+  margin: auto;
+}
+.player-info {
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.info {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 70%;
+}
+
+
+.player-number {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Staatliches', cursive;
+}
+
+.player-n {
+  position: absolute;
+  font-size: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  color: #047757;
+  overflow: hidden;
+}
+
+@media (max-width: 412px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 300px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+}
+button {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: whitesmoke;
+}
+.status {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+}
+.status p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.success {
+  background-color: #00ce42;
+}
+.rest {
+  background-color: red;
+}
+
+.sub {
+  background-color: orange;
+}
+.playergrid
+{
+  
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+  width: 100%;
 }

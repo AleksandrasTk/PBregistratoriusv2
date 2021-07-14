@@ -13,15 +13,15 @@ const Navbar = () => {
           <a href='#!'>Register</a>
         </div>
       </nav>
-      <nav className='tabs'>
-        <div className='container'>
+      
+        <div className='container tabs'>
           <div className='nav-tabs'>
-            <a href='#!'>Squad</a>
+            <a href='#!'>Squad</a> &nbsp; | &nbsp;
             <a href='#!'>PLaying XI</a>
           </div>
         </div>
       </nav>
-    </nav>
+    
   );
 };
 

@@ -26,7 +26,7 @@ const PlayerState = (props) => {
       name: 'Lionel Messi',
       playerNumber: '10',
       role: 'Midfielder',
-      status: 'Playing',
+      status: 'Rest',
     },
     {
       name: 'Christiano Ronaldo',
