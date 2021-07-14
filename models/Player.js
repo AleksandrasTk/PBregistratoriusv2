@@ -10,9 +10,9 @@ const PlayerSchema = mongoose.Schema({
     required: true,
   },
   playerNumber: {
-    type: String,
+    type: Number,
     required: true,
-    // unique: true,
+    unique: true,
   },
   role: {
     type: String,
