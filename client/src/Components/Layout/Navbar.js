@@ -3,14 +3,23 @@ import logo from "../../img/Logo-H.png";
 
 const Navbar = () => {
   return (
-    <nav className='navigation '>
-      <div className='navbar'>
+    <nav className='navigation'>
+      <nav className='navbar'>
         <div className='nav-logo'>
           <img src={logo} alt='logo' />
         </div>
-        <div className='nav-auth'></div>
+        <div className='nav-auth'>
+          <a href='#!'>Login</a>
+          <a href='#!'>Register</a>
+        </div>
+      </nav>
+
+      <div className='container tabs'>
+        <div className='nav-tabs'>
+          <a href='#!'>Squad</a>
+          <a href='#!'>PLaying XI</a>
+        </div>
       </div>
-      <div className='tabs'></div>
     </nav>
   );
 };
