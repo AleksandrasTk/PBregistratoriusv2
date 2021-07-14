@@ -117,7 +117,7 @@
   z-index: 1;
   position: relative;
   overflow: hidden;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
 }
 
 .player-n {
@@ -157,7 +157,7 @@
   height: 50px;
   width: 120px;
   border-radius: 10px;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
   font-size: 1.3rem;
 }
 .status p {

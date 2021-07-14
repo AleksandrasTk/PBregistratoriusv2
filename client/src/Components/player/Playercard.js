@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Playercard = ({ player }) => {
   const { name, playerNumber, role, status } = player;
@@ -7,17 +7,20 @@ const Playercard = ({ player }) => {
       <div className='card'>
         <div className='player-info'>
           <div className='info'>
-            <h1>{name}</h1>
-            <h1>{role}</h1>
+            <div>
+              <h1>{name}</h1>
+              <h1>{role}</h1>
+            </div>
             <div
               className={
-                'status ' +
-                (status === 'Rest'
-                  ? 'rest'
-                  : status === 'Substitute'
-                  ? 'sub'
-                  : 'success')
-              }>
+                "status " +
+                (status === "Rest"
+                  ? "rest"
+                  : status === "Substitute"
+                  ? "sub"
+                  : "success")
+              }
+            >
               <p>{status}</p>
             </div>
           </div>

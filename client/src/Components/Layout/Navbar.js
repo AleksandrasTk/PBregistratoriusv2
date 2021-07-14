@@ -14,10 +14,10 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className='tabs'>
+      <div className='container tabs'>
         <div className='nav-tabs'>
           <a href='#!'>Squad</a> &nbsp; | &nbsp;
-          <a href='#!'>Playing</a>
+          <a href='#!'>PLaying XI</a>
         </div>
       </div>
     </nav>
