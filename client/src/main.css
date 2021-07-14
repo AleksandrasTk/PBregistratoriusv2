@@ -1,5 +1,5 @@
 .navigation {
-  margin:1;
+  margin: 1;
   height: 150px;
 }
 
@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color:  #1d1d2c;
+  background-color: #1d1d2c;
 }
 
 .nav-auth a {
@@ -37,57 +37,48 @@
 .nav-logo img {
   width: 100%;
 }
-.sticky
-{
-  position:fixed;
-  top:0;
-  width:100%;
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .tabs {
   background-color: black;
   position: relative;
   width: 100vw;
   height: 30%;
-  
 }
 
 .nav-tabs {
   height: 100%;
   width: 30%;
-  left:50%;
-  transform: translate(-50%,0);
+  left: 50%;
+  transform: translate(-50%, 0);
   display: flex;
   position: absolute;
   justify-content: center;
   align-items: center;
- 
-  
 }
-.nav-tabs a{
-  color:white;
- 
+.nav-tabs a {
+  color: white;
 }
-.add-form
-{
+.add-form {
   width: 400px;
-  margin:auto;
+  margin: auto;
   height: 500px;
   padding: 40px;
   border-radius: 15px;
   justify-content: center;
   align-items: center;
   background-color: #faf3eb;
-  color:var(--primary-color);
-
+  color: var(--primary-color);
 }
-.player-form
-{
-  height:80vh;
+.player-form {
+  height: 80vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 .card {
   height: 400px;
@@ -120,7 +111,6 @@
   height: 70%;
 }
 
-
 .player-number {
   height: 100%;
   width: 100%;
@@ -138,6 +128,7 @@
   transform: translate(-50%, -50%) rotate(-45deg);
   color: #047757;
   overflow: hidden;
+  user-select: none;
 }
 
 @media (max-width: 412px) {
@@ -151,7 +142,7 @@
     border-radius: 5px;
   }
 }
-button {
+.card-edit {
   position: absolute;
   bottom: 0;
   height: 50px;
@@ -162,9 +153,10 @@ button {
   color: whitesmoke;
 }
 .status {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
+  height: 50px;
+  width: 120px;
+  border-radius: 10px;
+  font-family: 'Staatliches', cursive;
   font-size: 1.3rem;
 }
 .status p {
@@ -181,13 +173,28 @@ button {
 }
 
 .sub {
-  background-color: orange;
+  background-color: #e46904;
 }
-.playergrid
-{
-  
+.playergrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px;
   width: 100%;
+}
+
+.card-delete {
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  z-index: 5;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  color: white;
+  font-weight: 700;
 }

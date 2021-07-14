@@ -1,26 +1,35 @@
-import React from 'react'
+import React from 'react';
 
-const Playercard = () => {
-    return (
-        <div>
-            <div className="card">
-        <div className="player-info">
-          <div className="info">
-            <h1>Lebron James</h1>
-            <h1>Shooter</h1>
-            <div class="status rest">
-              <p>Rest</p>
+const Playercard = ({ player }) => {
+  const { name, playerNumber, role, status } = player;
+  return (
+    <div>
+      <div className='card'>
+        <div className='player-info'>
+          <div className='info'>
+            <h1>{name}</h1>
+            <h1>{role}</h1>
+            <div
+              className={
+                'status ' +
+                (status === 'Rest'
+                  ? 'rest'
+                  : status === 'Substitute'
+                  ? 'sub'
+                  : 'success')
+              }>
+              <p>{status}</p>
             </div>
           </div>
-          <button>Edit</button>
+          <button className='card-edit'>Edit</button>
+          <button className='card-delete'> X </button>
         </div>
-        <div className="player-number">
-          <p className="player-n">233</p>
+        <div className='player-number'>
+          <p className='player-n'>{playerNumber}</p>
         </div>
-      </div> 
-      
-        </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default Playercard
+export default Playercard;
