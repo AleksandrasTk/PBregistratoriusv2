@@ -156,9 +156,10 @@
 .status {
   height: 50px;
   width: 120px;
-  border-radius: 10px;
+  border-radius: 2.5px;
   font-family: "Staatliches", cursive;
   font-size: 1.3rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.171);
 }
 .status p {
   position: absolute;
