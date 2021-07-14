@@ -1,5 +1,5 @@
-import React from 'react';
-import logo from '../../img/Logo-H.png';
+import React from "react";
+import logo from "../../img/Logo-H.png";
 
 const Navbar = () => {
   return (
@@ -10,7 +10,7 @@ const Navbar = () => {
         </div>
         <div className='nav-auth'></div>
       </div>
-      <div className='tabs'>s</div>
+      <div className='tabs'></div>
     </nav>
   );
 };

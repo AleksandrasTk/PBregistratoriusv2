@@ -6,7 +6,7 @@
 .navbar {
   background-color: rebeccapurple;
   height: 50%;
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
@@ -25,6 +25,6 @@
 .tabs {
   background-color: lawngreen;
   height: 50%;
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
