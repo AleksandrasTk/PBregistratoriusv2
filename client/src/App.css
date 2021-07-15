@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap");
 
 :root {
   --bg-color-dark: #10101c;
@@ -20,7 +20,7 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.4;
   font-size: 1rem;
   color: var(--font-dark);
@@ -32,7 +32,7 @@ h1,
 h2,
 h3 {
   font-weight: lighter;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
 }
 
 .main-heading {
@@ -65,15 +65,26 @@ a {
 }
 
 .btn {
-  height: 50px;
+  /* height: 50px; */
   border: none;
   border-radius: 5px;
   padding: 10px 30px;
   margin-top: 10px;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+.btn:hover {
+  box-shadow: 5px 5px 30px #00956b6b, -5px -5px 30px #00956b6b;
+}
+
+.btn:focus {
+  outline: none;
 }
 
 .btn-block {
   width: 100%;
+  color: var(--font-dark);
   background-color: var(--primary-color);
 }

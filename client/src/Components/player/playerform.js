@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
 const Playerform = () => {
   const onSubmit = (e) => {
-    console.log('hello');
+    console.log("hello");
     e.preventDefault();
   };
   return (
     <div className='container player-form'>
       <form className='add-form' onSubmit={onSubmit}>
-        <h1 style={{ textAlign: 'center', color: 'black' }}>
+        <h1 style={{ textAlign: "center", color: "black" }}>
           Add a player to your sqaud
         </h1>
         <div className='form-control'>
           <label>NAME</label>
-          <input type='text' placeholder='Add Task' />
+          <input type='text' placeholder='Player Name' />
         </div>
         <div className='form-control'>
           <label>PLAYER NUMBER</label>
@@ -21,7 +21,7 @@ const Playerform = () => {
         </div>
         <div className='form-control'>
           <label>ROLE/POSITION</label>
-          <input type='text' placeholder='Add Time' />
+          <input type='text' placeholder='Player Position' />
         </div>
 
         <div className='form-control form-control-check'>
@@ -54,8 +54,7 @@ const Playerform = () => {
             <label htmlFor='Playing'>Rest</label>
           </div>
         </div>
-
-        <input type='submit' value='Save Task' className='btn btn-block' />
+        <button className='btn btn-block'>Add Player</button>
       </form>
     </div>
   );

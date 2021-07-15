@@ -1,16 +1,16 @@
-.navigation {
-  margin: 1;
-  height: 150px;
-}
-
 .navbar {
   background-color: #1d1d2c;
-  height: 50%;
+  height: 75px;
   width: 100vw;
   padding: 0 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.navigation {
+  z-index: 10;
+  position: fixed;
 }
 
 .nav-auth {
@@ -45,8 +45,9 @@
 .tabs {
   background-color: black;
   position: relative;
+  z-index: 10;
   width: 100vw;
-  height: 30%;
+  height: 50px;
 }
 
 .nav-tabs {
@@ -87,7 +88,7 @@
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
   /* font-size: 1.2re; */
 }
 
@@ -104,11 +105,47 @@
   height: 40px;
   margin-top: 5px;
   border: none;
-  border-radius: 5px;
+  border-radius: 2.5px;
+  padding: 10px;
 }
 
-.form-control input[type='radio'] {
+input:focus {
+  outline: none;
+  border: 2px var(--primary-color) solid;
+}
+
+.form-control input[type="radio"] {
   width: 5%;
+}
+
+.form-control input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: 50%;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%, -50%);
+  /* background-color: red; */
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  /* border: 2px solid var(--primary-color); */
+}
+
+.form-control input[type="radio"]:checked:after {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--primary-color);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 1.5px solid var(--primary-color);
 }
 
 .status-radio {
@@ -135,7 +172,7 @@
   position: relative;
   border-radius: 25px;
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   margin: auto;
 }
 .player-info {
@@ -165,7 +202,7 @@
   z-index: 1;
   position: relative;
   overflow: hidden;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
 }
 
 .player-n {
@@ -183,7 +220,7 @@
   height: 50px;
   width: 120px;
   border-radius: 2.5px;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
   font-size: 1.3rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.171);
 }
@@ -231,4 +268,59 @@
   text-align: center;
   color: white;
   font-weight: 700;
+}
+
+.players {
+  height: auto;
+}
+
+.greet-content {
+  height: 150px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.landing {
+  background: url("./img/Landing-BG.png") center center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.landing img {
+  height: 300px;
+  /* margin-bottom: 50px; */
+  z-index: 1;
+}
+
+.landing::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.landing-content {
+  height: 150px;
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  z-index: 1;
+  text-align: center;
+}
+
+.landing-content h1 {
+  font-size: 2.5rem;
+}
+
+.landing p {
+  font-size: 1.2rem;
 }
