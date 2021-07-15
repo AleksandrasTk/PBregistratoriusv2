@@ -14,7 +14,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <div className='container tabs'>
+      <div className='tabs'>
         <div className='nav-tabs'>
           <a href='#!'>Squad</a> &nbsp; | &nbsp;
           <a href='#!'>PLaying XI</a>

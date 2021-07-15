@@ -1,49 +1,64 @@
+import React from 'react';
 
-import React from 'react'
-
-const playerform = () => {
-    const onSubmit =(e) =>
-    {
-        console.log("hello");
-        e.preventDefault();
-    }
-    return (
-        <div className="container player-form">
-            <form className='add-form' onSubmit={onSubmit}>
-
-      <div className='form-control'>
-        <label>NAME</label>
-        <input
-          type='text'
-          placeholder='Add Task'
-       />
-      </div>
-      <div className='form-control'>
-        <label>PLAYER NUMBER</label>
-        <input
-          type='Date'
-          placeholder='Add Day'
-       />
-      </div>
-      <div className='form-control'>
-        <label>ROLE/POSITION</label>
-        <input
-          type='text'
-          placeholder='Add Time'
-       />
-      </div>
-      
-      <div className='form-control form-control-check'>
-        <label>STATUS</label>
-        <input
-          type='radio'
-        />
-      </div>
-
-      <input type='submit' value='Save Task' className='btn btn-block' />
-    </form>
+const Playerform = () => {
+  const onSubmit = (e) => {
+    console.log('hello');
+    e.preventDefault();
+  };
+  return (
+    <div className='container player-form'>
+      <form className='add-form' onSubmit={onSubmit}>
+        <h1 style={{ textAlign: 'center', color: 'black' }}>
+          Add a player to your sqaud
+        </h1>
+        <div className='form-control'>
+          <label>NAME</label>
+          <input type='text' placeholder='Add Task' />
         </div>
-    )
-}
+        <div className='form-control'>
+          <label>PLAYER NUMBER</label>
+          <input type='number' placeholder='Player Number' />
+        </div>
+        <div className='form-control'>
+          <label>ROLE/POSITION</label>
+          <input type='text' placeholder='Add Time' />
+        </div>
 
-export default playerform
+        <div className='form-control form-control-check'>
+          <label>STATUS:</label>
+          <div className='status-radio'>
+            <input
+              type='radio'
+              name='type'
+              value='personal'
+              // checked={type === 'personal'}
+            />
+            <label htmlFor='Playing'>PLaying</label>
+          </div>
+          <div className='status-radio'>
+            <input
+              type='radio'
+              name='type'
+              value='personal'
+              // checked={type === 'personal'}
+            />
+            <label htmlFor='Playing'>Substitue</label>
+          </div>
+          <div className='status-radio'>
+            <input
+              type='radio'
+              name='type'
+              value='personal'
+              // checked={type === 'personal'}
+            />
+            <label htmlFor='Playing'>Rest</label>
+          </div>
+        </div>
+
+        <input type='submit' value='Save Task' className='btn btn-block' />
+      </form>
+    </div>
+  );
+};
+
+export default Playerform;
