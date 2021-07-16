@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-const Playerform = () => {
+const playerform = () => {
   const onSubmit = (e) => {
-    console.log('hello');
+    console.log("hello");
     e.preventDefault();
   };
   return (
     <div className='container player-form'>
       <form className='add-form' onSubmit={onSubmit}>
-        <h1 style={{ textAlign: 'center', color: 'black' }}>
+        <h1 style={{ textAlign: "center", color: "black" }}>
           Add a player to your sqaud
         </h1>
         <div className='form-control'>
@@ -60,4 +60,4 @@ const Playerform = () => {
   );
 };
 
-export default Playerform;
+export default playerform;
