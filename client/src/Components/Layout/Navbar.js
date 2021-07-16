@@ -1,16 +1,20 @@
-import React from "react";
+import React, { Fragment } from "react";
 import logo from "../../img/Logo-H.png";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     // <nav className='navigation'>
-    <nav className='navbar'>
-      <div className='nav-logo'>
-        <img src={logo} alt='logo' />
+    <nav className="navbar">
+      <div className="nav-logo">
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
       </div>
-      <div className='nav-auth'>
-        <a href='#!'>Login</a>
-        <a href='#!'>Register</a>
+      <div className="nav-auth">
+        <Fragment>
+          <Link to="/login">Login</Link>
+          <Link to="/register">Register</Link>
+        </Fragment>
       </div>
     </nav>
 
