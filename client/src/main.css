@@ -88,7 +88,7 @@
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
   /* font-size: 1.2re; */
 }
 
@@ -114,11 +114,11 @@ input:focus {
   border: 2px var(--primary-color) solid;
 }
 
-.form-control input[type='radio'] {
+.form-control input[type="radio"] {
   width: 5%;
 }
 
-.form-control input[type='radio']:after {
+.form-control input[type="radio"]:after {
   width: 15px;
   height: 15px;
   border-radius: 15px;
@@ -127,13 +127,13 @@ input:focus {
   position: relative;
   transform: translate(-50%, -50%);
   /* background-color: red; */
-  content: '';
+  content: "";
   display: inline-block;
   visibility: visible;
   /* border: 2px solid var(--primary-color); */
 }
 
-.form-control input[type='radio']:checked:after {
+.form-control input[type="radio"]:checked:after {
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -142,7 +142,7 @@ input:focus {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: var(--primary-color);
-  content: '';
+  content: "";
   display: inline-block;
   visibility: visible;
   border: 1.5px solid var(--primary-color);
@@ -202,7 +202,7 @@ input:focus {
   z-index: 1;
   position: relative;
   overflow: hidden;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
 }
 
 .player-n {
@@ -220,7 +220,7 @@ input:focus {
   height: 50px;
   width: 120px;
   border-radius: 2.5px;
-  font-family: 'Staatliches', cursive;
+  font-family: "Staatliches", cursive;
   font-size: 1.3rem;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.171);
 }
@@ -282,7 +282,7 @@ input:focus {
 }
 
 .landing {
-  background: url('./img/Landing-BG.png') center center/cover no-repeat;
+  background: url("./img/Landing-BG.png") center center/cover no-repeat;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -297,7 +297,7 @@ input:focus {
 }
 
 .landing::after {
-  content: '';
+  content: "";
   position: absolute;
   height: 100%;
   width: 100%;
@@ -323,4 +323,47 @@ input:focus {
 
 .landing p {
   font-size: 1.2rem;
+}
+
+.register {
+  background: url("./img/Landing-BG.png") center center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+}
+
+.register::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.register-content {
+  height: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.register-logo {
+  height: 90%;
+  width: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.register-logo img {
+  height: 300px;
+}
+
+.register-form {
+  height: 90%;
+  width: 50%;
+  display: grid;
+  place-items: center;
 }

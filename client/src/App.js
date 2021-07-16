@@ -4,7 +4,9 @@ import Playeritems from './Components/player/Playeritems';
 import Navbar from './Components/Layout/Navbar';
 import Playerform from './Components/player/Playerform';
 import Playersstate from './Context/Players/PlayersState';
-import Landing from './Components/Layout/Landing';
+// import Landing from './Components/Layout/Landing';
+// import Login from "./Components/Auth/Login";
+import Register from './Components/Auth/Register';
 // import Tabs from "./Components/Layout/Tabs";
 
 import Login from './Components/Auth/Login';
@@ -18,7 +20,7 @@ function App() {
       </div>
       <Playerform />
       <Playeritems />
-      <Landing />
+      <Register />
       <Login />
     </Playersstate>
   );
