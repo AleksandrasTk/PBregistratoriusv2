@@ -1,6 +1,11 @@
 import React from 'react';
 import LogoV from '../../img/Logo-V.png';
 const Login = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log('object');
+  };
+
   return (
     <div className='register'>
       <div className='container register-content'>
@@ -8,7 +13,10 @@ const Login = () => {
           <img src={LogoV} alt='LogoV' />
         </div>
         <div className='register-form'>
-          <form className='add-form' style={{ height: '400px' }}>
+          <form
+            className='add-form'
+            onSubmit={onSubmit}
+            style={{ height: '400px' }}>
             <h1 style={{ textAlign: 'center', color: 'black' }}>Login</h1>
             <div className='form-control'>
               <label>TEAM NAME</label>
