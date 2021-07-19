@@ -76,8 +76,7 @@
 
 .add-form {
   width: 400px;
-  margin: auto;
-  height: 550px;
+  height: auto;
   padding: 40px;
   border-radius: 15px;
   justify-content: center;
@@ -89,6 +88,8 @@
   justify-content: space-evenly;
   flex-direction: column;
   font-family: "Staatliches", cursive;
+  /* margin-bottom: 75px; */
+  transform: translateY(10%);
   /* font-size: 1.2re; */
 }
 
@@ -174,7 +175,13 @@ input:focus {
   color: white;
   font-size: 25px;
   margin: auto;
+  cursor: url("./img/tennis.png"), default;
 }
+
+.info div h1::selection {
+  text-shadow: 5px 5px 5px black, 10px 10px 10px black;
+}
+
 .player-info {
   height: 90%;
   width: 90%;
