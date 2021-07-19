@@ -28,6 +28,11 @@ body {
   background-color: var(--bg-color-dark);
 }
 
+::selection {
+  background-color: var(--primary-color);
+  color: var(--font-dark);
+}
+
 h1,
 h2,
 h3 {
