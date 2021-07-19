@@ -17,15 +17,15 @@ function App() {
     <Playersstate>
       <Router>
         <Fragment>
-          <div className="navigation">
+          <div className='navigation'>
             <Navbar />
             {/* <Tabs /> */}
           </div>
 
           <Switch>
-            <Route exact path="/" component={Playerform} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/register" component={Register} />
+            <Route exact path='/' component={Playerform} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path='/register' component={Register} />
           </Switch>
         </Fragment>
       </Router>
