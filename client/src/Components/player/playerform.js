@@ -1,10 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import PlayerContext from "../../Context/Players/playerContext";
 
 const Playerform = () => {
   const playerContext = useContext(PlayerContext);
 
-  const { addPlayer } = playerContext;
+  const { addPlayer, current, clearCurrent, updatePlayer } = playerContext;
+
+  useEffect(() => {
+    if (current !== null) {
+      setPlayer(current);
+    } else {
+      setPlayer({
+        name: "",
+        playerNumber: "",
+        role: "",
+        status: "rest",
+      });
+    }
+  }, [playerContext, current]);
 
   const [player, setPlayer] = useState({
     name: "",
@@ -17,7 +30,12 @@ const Playerform = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    addPlayer(player);
+    if (current === null) {
+      addPlayer(player);
+    } else {
+      updatePlayer(player);
+      clearCurrent();
+    }
     setPlayer({
       name: "",
       playerNumber: "",
@@ -34,7 +52,7 @@ const Playerform = () => {
     <div className='container player-form'>
       <form className='add-form' onSubmit={onSubmit}>
         <h1 style={{ textAlign: "center", color: "black" }}>
-          Add a player to your sqaud
+          {current ? "Update Player" : "Add a Player to your squad"}
         </h1>
         <div className='form-control'>
           <label>NAME</label>
@@ -100,7 +118,9 @@ const Playerform = () => {
             <label htmlFor='Playing'>Rest</label>
           </div>
         </div>
-        <button className='btn btn-block'>Add Player</button>
+        <button className='btn btn-block'>
+          {current ? "Update Player" : "Add Player"}
+        </button>
       </form>
     </div>
   );
