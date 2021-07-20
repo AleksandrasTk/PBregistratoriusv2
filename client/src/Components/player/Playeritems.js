@@ -11,9 +11,9 @@ const Playeritems = () => {
         <h1>Hey Coach here is your squad</h1>
       </div>
       <section className='container playergrid'>
-        {players.map((p) => {
-          return <Playercard player={p} key={p.id} />;
-        })}
+        {players.map((p) => (
+          <Playercard player={p} />
+        ))}
       </section>
     </section>
   );

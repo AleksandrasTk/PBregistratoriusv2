@@ -7,6 +7,7 @@ import {
   DELETE_PLAYER,
   SET_CURRENT,
   CLEAR_CURRENT,
+  UPDATE_PLAYER,
   // GET_PLAYERS,
   // DELETE_PLAYER,
   // UPDATE_PLAYER,
@@ -97,6 +98,14 @@ const PlayerState = (props) => {
     });
   };
 
+  // Update Player
+  const updatePlayer = (player) => {
+    dispatch({
+      type: UPDATE_PLAYER,
+      payload: player,
+    });
+  };
+
   return (
     <playerContext.Provider
       value={{
@@ -106,6 +115,7 @@ const PlayerState = (props) => {
         deletePlayer,
         setCurrent,
         clearCurrent,
+        updatePlayer,
       }}
     >
       {props.children}

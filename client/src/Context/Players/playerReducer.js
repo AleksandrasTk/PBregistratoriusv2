@@ -4,6 +4,7 @@ import {
   DELETE_PLAYER,
   SET_CURRENT,
   CLEAR_CURRENT,
+  UPDATE_PLAYER,
   //   GET_PLAYERS,
   //   UPDATE_PLAYER,
   //   FILTER_PLAYERS,
@@ -36,6 +37,13 @@ var switchCases = (state, action) => {
       return {
         ...state,
         current: null,
+      };
+    case UPDATE_PLAYER:
+      return {
+        ...state,
+        players: state.players.map((player) =>
+          player.id === action.payload.id ? action.payload : player
+        ),
       };
     default:
       return state;

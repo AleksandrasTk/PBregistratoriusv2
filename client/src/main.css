@@ -258,6 +258,7 @@ input:focus {
   background-color: black;
   color: whitesmoke;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .card-delete {
