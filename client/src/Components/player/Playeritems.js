@@ -12,7 +12,7 @@ const Playeritems = () => {
       </div>
       <section className='container playergrid'>
         {players.map((p) => {
-          return <Playercard player={p} />;
+          return <Playercard player={p} key={p.id} />;
         })}
       </section>
     </section>
