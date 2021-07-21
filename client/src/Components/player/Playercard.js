@@ -10,6 +10,7 @@ const Playercard = ({ player }) => {
     deletePlayer(id);
     clearCurrent();
   };
+
   const { id, name, playerNumber, role, status } = player;
   return (
     <div>
