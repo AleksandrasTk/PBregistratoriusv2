@@ -8,11 +8,9 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_PLAYER,
+  FILTER_PLAYERS,
+  CLEAR_FILTER,
   // GET_PLAYERS,
-  // DELETE_PLAYER,
-  // UPDATE_PLAYER,
-  // FILTER_PLAYERS,
-  // CLEAR_FILTER,
   // PLAYER_ERROR,
   // CLEAR_PLAYERS,
 } from "../types";
@@ -57,6 +55,7 @@ const PlayerState = (props) => {
       },
     ],
     current: null,
+    filtered: null,
   };
 
   const [state, dispatch] = useReducer(playerReducer, initialState);
@@ -106,16 +105,34 @@ const PlayerState = (props) => {
     });
   };
 
+  // Filter Player
+  const filterPlayer = (text) => {
+    dispatch({
+      type: FILTER_PLAYERS,
+      payload: text,
+    });
+  };
+
+  // Clear Filter
+  const clearFilter = () => {
+    dispatch({
+      type: CLEAR_FILTER,
+    });
+  };
+
   return (
     <playerContext.Provider
       value={{
         players: state.players,
         current: state.current,
+        filtered: state.filtered,
         addPlayer,
         deletePlayer,
         setCurrent,
         clearCurrent,
         updatePlayer,
+        filterPlayer,
+        clearFilter,
       }}
     >
       {props.children}

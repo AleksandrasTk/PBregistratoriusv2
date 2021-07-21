@@ -5,6 +5,8 @@ import {
   SET_CURRENT,
   CLEAR_CURRENT,
   UPDATE_PLAYER,
+  FILTER_PLAYERS,
+  CLEAR_FILTER,
   //   GET_PLAYERS,
   //   UPDATE_PLAYER,
   //   FILTER_PLAYERS,
@@ -44,6 +46,19 @@ var switchCases = (state, action) => {
         players: state.players.map((player) =>
           player.id === action.payload.id ? action.payload : player
         ),
+      };
+    case FILTER_PLAYERS:
+      return {
+        ...state,
+        filtered: state.players.filter((player) => {
+          const regex = new RegExp(`${action.payload}`, "gi");
+          return player.name.match(regex) || player.playerNumber.match(regex);
+        }),
+      };
+    case CLEAR_FILTER:
+      return {
+        ...state,
+        filtered: null,
       };
     default:
       return state;
