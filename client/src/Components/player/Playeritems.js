@@ -37,9 +37,7 @@ const Playeritems = () => {
         </form>
       </div>
       <section className='container playergrid'>
-        {players !== null && filtered !== null
-          ? filtered.map((p) => <Playercard player={p} />)
-          : players.map((p) => <Playercard player={p} />)}
+        {/* {players.map((p) => console.log(p))} */}
       </section>
     </section>
   );

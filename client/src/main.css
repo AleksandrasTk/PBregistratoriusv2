@@ -7,12 +7,10 @@
   align-items: center;
   justify-content: space-between;
 }
-
 .navigation {
   z-index: 10;
   position: fixed;
 }
-
 .nav-auth {
   height: 100%;
   width: 30%;
@@ -21,19 +19,16 @@
   justify-content: space-evenly;
   background-color: #1d1d2c;
 }
-
 .nav-auth a {
   font-weight: 700;
   color: white;
 }
-
 .nav-logo {
   height: 100%;
   width: 200px;
   display: grid;
   place-items: center;
 }
-
 .nav-logo img {
   width: 100%;
 }
@@ -49,7 +44,6 @@
   width: 100vw;
   height: 50px;
 }
-
 .nav-tabs {
   height: 100%;
   width: 30%;
@@ -63,7 +57,6 @@
 .nav-tabs a {
   color: white;
 }
-
 .player-form {
   height: 100vh;
   width: 100%;
@@ -71,16 +64,14 @@
   justify-content: center;
   align-items: center;
 }
-
 /* form */
-
 .add-form {
   width: 400px;
-  height: auto;
+  /* height: auto; */
   padding: 40px;
   border-radius: 15px;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   background-color: #faf3eb;
   color: var(--primary-color);
   display: flex;
@@ -89,10 +80,9 @@
   flex-direction: column;
   font-family: 'Staatliches', cursive;
   /* margin-bottom: 75px; */
-  transform: translateY(10%);
+  /* transform: translateY(-10%); */
   /* font-size: 1.2re; */
 }
-
 .form-control {
   display: flex;
   flex-direction: column;
@@ -100,7 +90,6 @@
   width: 100%;
   margin-top: 10px;
 }
-
 .form-control input {
   width: 100%;
   height: 40px;
@@ -109,16 +98,13 @@
   border-radius: 2.5px;
   padding: 10px;
 }
-
 input:focus {
   outline: none;
   border: 2px var(--primary-color) solid;
 }
-
 .form-control input[type='radio'] {
   width: 5%;
 }
-
 .form-control input[type='radio']:after {
   width: 15px;
   height: 15px;
@@ -133,7 +119,6 @@ input:focus {
   visibility: visible;
   /* border: 2px solid var(--primary-color); */
 }
-
 .form-control input[type='radio']:checked:after {
   width: 7px;
   height: 7px;
@@ -148,24 +133,20 @@ input:focus {
   visibility: visible;
   border: 1.5px solid var(--primary-color);
 }
-
 .status-radio {
   width: 100%;
   display: flex;
   align-items: center;
 }
-
 .status-radio label {
   margin-left: 5px;
 }
-
 .playergrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px;
   width: 100%;
 }
-
 .card {
   height: 400px;
   width: 400px;
@@ -175,12 +156,11 @@ input:focus {
   color: white;
   font-size: 25px;
   margin: auto;
+  cursor: url('./img/tennis.png'), default;
 }
-
 .info div h1::selection {
   text-shadow: 5px 5px 5px black, 10px 10px 10px black;
 }
-
 .player-info {
   height: 90%;
   width: 90%;
@@ -201,7 +181,6 @@ input:focus {
   justify-content: space-evenly;
   height: 70%;
 }
-
 .player-number {
   height: 100%;
   width: 100%;
@@ -210,7 +189,6 @@ input:focus {
   overflow: hidden;
   font-family: 'Staatliches', cursive;
 }
-
 .player-n {
   position: absolute;
   font-size: 400px;
@@ -221,7 +199,6 @@ input:focus {
   overflow: hidden;
   user-select: none;
 }
-
 .status {
   height: 50px;
   width: 120px;
@@ -242,11 +219,9 @@ input:focus {
 .rest {
   background-color: red;
 }
-
 .sub {
   background-color: #e46904;
 }
-
 .card-edit {
   position: absolute;
   bottom: 0;
@@ -259,7 +234,6 @@ input:focus {
   font-weight: 700;
   cursor: pointer;
 }
-
 .card-delete {
   height: 40px;
   width: 40px;
@@ -276,18 +250,15 @@ input:focus {
   color: white;
   font-weight: 700;
 }
-
 .players {
   height: auto;
 }
-
 .greet-content {
   height: 150px;
   width: 100%;
   display: flex;
   flex-direction: column;
 }
-
 .landing {
   background: url('./img/Landing-BG.png') center center/cover no-repeat;
   height: 100vh;
@@ -296,13 +267,11 @@ input:focus {
   justify-content: center;
   flex-direction: column;
 }
-
 .landing img {
   height: 300px;
   /* margin-bottom: 50px; */
   z-index: 1;
 }
-
 .landing::after {
   content: '';
   position: absolute;
@@ -312,7 +281,6 @@ input:focus {
   left: 0%;
   background: rgba(0, 0, 0, 0.4);
 }
-
 .landing-content {
   height: 150px;
   width: 700px;
@@ -323,22 +291,18 @@ input:focus {
   z-index: 1;
   text-align: center;
 }
-
 .landing-content h1 {
   font-size: 2.5rem;
 }
-
 .landing p {
   font-size: 1.2rem;
 }
-
 .register {
   background: url('./img/Landing-BG.png') center center/cover no-repeat;
   height: 100vh;
-  display: flex;
-  align-items: flex-end;
+  display: grid;
+  place-items: center;
 }
-
 .register::after {
   content: '';
   position: absolute;
@@ -348,38 +312,32 @@ input:focus {
   left: 0%;
   background: rgba(0, 0, 0, 0.4);
 }
-
 .register-content {
-  height: 80%;
+  height: 100%;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   z-index: 1;
 }
-
 .register-logo {
   height: 90%;
   width: 50%;
   display: grid;
   place-items: center;
 }
-
 .register-logo img {
   height: 300px;
 }
-
 .register-form {
   height: 90%;
   width: 50%;
   display: grid;
   place-items: center;
 }
-
 .greet-content form {
   margin: auto;
   width: 50%;
 }
-
 .search-bar {
   border-radius: 5px;
   margin-top: 10px;
@@ -388,10 +346,9 @@ input:focus {
   padding: 10px 15px;
   font-size: 1rem;
   font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background: var(--bg-color-light);
 }
-
 .search-bar:focus {
   border: 3.5px var(--primary-color) solid;
 }

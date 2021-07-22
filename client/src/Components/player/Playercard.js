@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import PlayerContext from "../../Context/Players/playerContext";
+import React, { useContext } from 'react';
+import PlayerContext from '../../Context/Players/playerContext';
 
 const Playercard = ({ player }) => {
   const playerContext = useContext(PlayerContext);
@@ -23,14 +23,13 @@ const Playercard = ({ player }) => {
             </div>
             <div
               className={
-                "status " +
-                (status === "rest"
-                  ? "rest"
-                  : status === "substitute"
-                  ? "sub"
-                  : "success")
-              }
-            >
+                'status ' +
+                (status === 'rest'
+                  ? 'rest'
+                  : status === 'substitute'
+                  ? 'sub'
+                  : 'success')
+              }>
               <p>{status}</p>
             </div>
           </div>
@@ -38,13 +37,12 @@ const Playercard = ({ player }) => {
             className='card-edit'
             onClick={() => {
               setCurrent(player);
-            }}
-          >
+            }}>
             <h1>Edit</h1>
           </button>
           <button className='card-delete' onClick={onClick}>
-            {" "}
-            X{" "}
+            {' '}
+            X{' '}
           </button>
         </div>
         <div className='player-number'>

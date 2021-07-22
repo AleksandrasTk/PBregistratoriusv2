@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
-import PlayerContext from "../../Context/Players/playerContext";
+import React, { useContext, useState, useEffect } from 'react';
+import PlayerContext from '../../Context/Players/playerContext';
 
 const Playerform = () => {
   const playerContext = useContext(PlayerContext);
@@ -11,19 +11,19 @@ const Playerform = () => {
       setPlayer(current);
     } else {
       setPlayer({
-        name: "",
-        playerNumber: "",
-        role: "",
-        status: "rest",
+        name: '',
+        playerNumber: '',
+        role: '',
+        status: 'rest',
       });
     }
   }, [playerContext, current]);
 
   const [player, setPlayer] = useState({
-    name: "",
-    playerNumber: "",
-    role: "",
-    status: "Rest",
+    name: 'RAvi',
+    playerNumber: '',
+    role: '',
+    status: '',
   });
 
   const { name, playerNumber, role, status } = player;
@@ -31,16 +31,22 @@ const Playerform = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (current === null) {
-      addPlayer(player);
+      addPlayer({
+        name,
+        playerNumber,
+        role,
+        status,
+      });
     } else {
       updatePlayer(player);
       clearCurrent();
     }
+    console.log(player);
     setPlayer({
-      name: "",
-      playerNumber: "",
-      role: "",
-      status: "rest",
+      name: '',
+      playerNumber: '',
+      role: '',
+      status: 'rest',
     });
   };
 
@@ -50,9 +56,12 @@ const Playerform = () => {
 
   return (
     <div className='container player-form'>
-      <form className='add-form' onSubmit={onSubmit}>
-        <h1 style={{ textAlign: "center", color: "black" }}>
-          {current ? "Update Player" : "Add a Player to your squad"}
+      <form
+        className='add-form'
+        style={{ transform: 'translateY(10%)' }}
+        onSubmit={onSubmit}>
+        <h1 style={{ textAlign: 'center', color: 'black' }}>
+          {current ? 'Update Player' : 'Add a Player to your squad'}
         </h1>
         <div className='form-control'>
           <label>NAME</label>
@@ -92,7 +101,7 @@ const Playerform = () => {
               type='radio'
               name='status'
               value='playing'
-              checked={status === "playing"}
+              checked={status === 'playing'}
               onChange={onChange}
             />
             <label htmlFor='Playing'>Playing</label>
@@ -102,7 +111,7 @@ const Playerform = () => {
               type='radio'
               name='status'
               value='substitute'
-              checked={status === "substitute"}
+              checked={status === 'substitute'}
               onChange={onChange}
             />
             <label htmlFor='Playing'>Substitute</label>
@@ -112,14 +121,14 @@ const Playerform = () => {
               type='radio'
               name='status'
               value='rest'
-              checked={status === "rest"}
+              checked={status === 'rest'}
               onChange={onChange}
             />
             <label htmlFor='Playing'>Rest</label>
           </div>
         </div>
         <button className='btn btn-block'>
-          {current ? "Update Player" : "Add Player"}
+          {current ? 'Update Player' : 'Add Player'}
         </button>
       </form>
     </div>
@@ -127,6 +136,3 @@ const Playerform = () => {
 };
 
 export default Playerform;
-
-
-

@@ -7,23 +7,24 @@ import {
   UPDATE_PLAYER,
   FILTER_PLAYERS,
   CLEAR_FILTER,
+
   //   GET_PLAYERS,
   //   UPDATE_PLAYER,
   //   FILTER_PLAYERS,
   //   CLEAR_FILTER,
   //   CLEAR_PLAYERS,
-} from "../types";
+} from '../types';
 
 var switchCases = (state, action) => {
   switch (action.type) {
     case ADD_PLAYER:
       return {
         ...state,
-        players: [action.payload, ...state.players],
+        players: [...state.players, action.payload],
       };
     case PLAYER_ERROR:
       return {
-        error: alert(action.payload),
+        error: action.payload,
       };
     case DELETE_PLAYER:
       return {
@@ -51,7 +52,7 @@ var switchCases = (state, action) => {
       return {
         ...state,
         filtered: state.players.filter((player) => {
-          const regex = new RegExp(`${action.payload}`, "gi");
+          const regex = new RegExp(`${action.payload}`, 'gi');
           return player.name.match(regex) || player.playerNumber.match(regex);
         }),
       };

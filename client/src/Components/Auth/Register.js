@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
-import LogoV from "../../img/Logo-V.png";
-import AuthContext from "../../Context/Auth/authContext";
+import React, { useState, useEffect, useContext } from 'react';
+import LogoV from '../../img/Logo-V.png';
+import AuthContext from '../../Context/Auth/authContext';
 
 const Register = (props) => {
   const authContext = useContext(AuthContext);
@@ -8,20 +8,20 @@ const Register = (props) => {
   const { isAuthenticated, error, clearErrors, Register } = authContext;
 
   useEffect(() => {
-    if (isAuthenticated) props.history.push("/");
-    if (error === "Team already exists, Please choose another team name") {
-      alert("Team name already exists");
+    if (isAuthenticated) props.history.push('/');
+    if (error === 'Team already exists, Please choose another team name') {
+      alert('Team name already exists');
       clearErrors();
     }
   }, [props.history, clearErrors, isAuthenticated, error]);
 
   const [coach, setCoach] = useState({
-    name: "",
-    phone: "",
-    teamName: "",
-    sport: "",
-    password: "",
-    password2: "",
+    name: '',
+    phone: '',
+    teamName: '',
+    sport: '',
+    password: '',
+    password2: '',
   });
 
   const { name, phone, teamName, sport, password, password2 } = coach;
@@ -53,10 +53,9 @@ const Register = (props) => {
         <div className='register-form'>
           <form
             className='add-form'
-            style={{ height: "auto" }}
-            onSubmit={onSubmit}
-          >
-            <h1 style={{ textAlign: "center", color: "black" }}>Register</h1>
+            style={{ height: 'auto' }}
+            onSubmit={onSubmit}>
+            <h1 style={{ textAlign: 'center', color: 'black' }}>Register</h1>
             <div className='form-control'>
               <label>NAME</label>
               <input
