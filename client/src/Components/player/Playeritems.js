@@ -37,7 +37,9 @@ const Playeritems = () => {
         </form>
       </div>
       <section className='container playergrid'>
-        {/* {players.map((p) => console.log(p))} */}
+        {players.map((player) => {
+          return <Playercard player={player} key={player.id} />;
+        })}
       </section>
     </section>
   );

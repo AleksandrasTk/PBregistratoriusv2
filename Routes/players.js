@@ -1,22 +1,22 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { check, validationResult } = require("express-validator");
-const auth = require("../middleware/auth");
+const { check, validationResult } = require('express-validator');
+const auth = require('../middleware/auth');
 
-const Coach = require("../models/Coach");
-const Player = require("../models/Player");
+const Coach = require('../models/Coach');
+const Player = require('../models/Player');
 
 // @Route    GET /api/players
 // @Desc     Get a added Player
 // @access   Private
 
-router.get("/", auth, async (req, res) => {
+router.get('/', auth, async (req, res) => {
   try {
     const players = await Player.find({ coach: req.coach.id });
     res.json(players);
   } catch (err) {
     console.error(error.message);
-    res.status(500).json({ msg: "server error" });
+    res.status(500).json({ msg: 'server error' });
   }
 });
 
@@ -25,18 +25,18 @@ router.get("/", auth, async (req, res) => {
 // @access   Private
 
 router.post(
-  "/",
+  '/',
   [
     auth,
     [
-      check("name", "Please enter a valid name").not().isEmpty(),
-      check("playerNumber", "Please enter a valid Player Number")
+      check('name', 'Please enter a valid name').not().isEmpty(),
+      check('playerNumber', 'Please enter a valid Player Number')
         .not()
         .isEmpty(),
-      check("status", "Status must be Playing, Rest or Substitute").isIn([
-        "Playing",
-        "Rest",
-        "Substitute",
+      check('status', 'Status must be Playing, Rest or Substitute').isIn([
+        'Playing',
+        'Rest',
+        'Substitute',
       ]),
     ],
   ],
@@ -53,7 +53,7 @@ router.post(
     try {
       let player1 = await Player.findOne({ playerNumber });
       if (player1) {
-        return res.status(400).json({ msg: "Player number already exists" });
+        return res.status(400).json({ msg: 'Player number already exists' });
       }
       const newPlayer = new Player({
         name,
@@ -67,7 +67,7 @@ router.post(
       res.json(player);
     } catch (err) {
       console.error(err.message);
-      res.status(500).json({ msg: "server error" });
+      res.status(500).json({ msg: 'server error' });
     }
   }
 );
@@ -76,7 +76,7 @@ router.post(
 // @Desc     Update a Player
 // @access   Private
 
-router.put("/:id", auth, async (req, res) => {
+router.put('/:id', auth, async (req, res) => {
   const { name, playerNumber, role, status } = req.body;
   const playerField = {};
 
@@ -90,12 +90,12 @@ router.put("/:id", auth, async (req, res) => {
 
     // Check a player in coach squad
     if (!player) {
-      return res.status(401).json({ msg: "Player not found" });
+      return res.status(401).json({ msg: 'Player not found' });
     }
 
     // Make sure no one else edits players other than his/her coach
     if (player.coach.toString() !== req.coach.id) {
-      return res.status(401).json({ msg: "Not Authorized" });
+      return res.status(401).json({ msg: 'Not Authorized' });
     }
 
     player = await Player.findByIdAndUpdate(
@@ -106,7 +106,7 @@ router.put("/:id", auth, async (req, res) => {
     res.json(player);
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({ msg: "server error" });
+    res.status(500).json({ msg: 'server error' });
   }
 });
 
@@ -114,25 +114,25 @@ router.put("/:id", auth, async (req, res) => {
 // @Desc     Delete a Player
 // @access   Private
 
-router.delete("/:id", auth, async (req, res) => {
+router.delete('/:id', auth, async (req, res) => {
   try {
     let player = await Player.findById(req.params.id);
 
     // Check a player in coach squad
     if (!player) {
-      return res.status(401).json({ msg: "Player not found" });
+      return res.status(401).json({ msg: 'Player not found' });
     }
 
     // Make sure no one else edits players other than his/her coach
     if (player.coach.toString() !== req.coach.id) {
-      return res.status(401).json({ msg: "Not Authorized" });
+      return res.status(401).json({ msg: 'Not Authorized' });
     }
 
     await Player.findByIdAndRemove(req.params.id);
-    res.json({ msg: "Player Removed" });
+    res.json({ msg: 'Player Removed' });
   } catch (err) {
     console.error(err.message);
-    res.status(500).json({ msg: "server error" });
+    res.status(500).json({ msg: 'server error' });
   }
 });
 

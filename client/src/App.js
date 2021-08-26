@@ -11,7 +11,7 @@ import Register from './Components/Auth/Register';
 import Login from './Components/Auth/Login';
 import Home from './Components/Layout/Home';
 import setAuthToken from './utils/setAuthToken';
-
+import Footer from './Components/Layout/Footer';
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -31,6 +31,7 @@ const App = () => {
               <Route exact path='/register' component={Register} />
               <Route exact path='/landing' component={Landing} />
             </Switch>
+            <Footer />
           </Fragment>
         </Router>
       </Playersstate>

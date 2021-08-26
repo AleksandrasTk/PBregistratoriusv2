@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const PlayerSchema = mongoose.Schema({
   coach: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "coaches",
+    ref: 'coaches',
   },
   name: {
     type: String,
@@ -19,7 +19,7 @@ const PlayerSchema = mongoose.Schema({
   },
   status: {
     type: String,
-    default: "Rest",
+    default: 'Rest',
   },
   date: {
     type: Date,
@@ -27,4 +27,4 @@ const PlayerSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Player", PlayerSchema);
+module.exports = mongoose.model('Player', PlayerSchema);

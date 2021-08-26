@@ -20,23 +20,22 @@ const Playerform = () => {
   }, [playerContext, current]);
 
   const [player, setPlayer] = useState({
-    name: 'RAvi',
+    name: '',
     playerNumber: '',
     role: '',
     status: '',
   });
 
+  // name: 'RAvi',
+  // playerNumber: '',
+  // role: '',
+  // status: '',
   const { name, playerNumber, role, status } = player;
 
   const onSubmit = (e) => {
     e.preventDefault();
     if (current === null) {
-      addPlayer({
-        name,
-        playerNumber,
-        role,
-        status,
-      });
+      addPlayer(player);
     } else {
       updatePlayer(player);
       clearCurrent();
