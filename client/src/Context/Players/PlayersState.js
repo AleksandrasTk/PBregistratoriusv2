@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 
 import playerContext from './playerContext';
 import playerReducer from './playerReducer';
-import axios from 'axios';
+// import axios from 'axios';
 import {
   ADD_PLAYER,
   DELETE_PLAYER,

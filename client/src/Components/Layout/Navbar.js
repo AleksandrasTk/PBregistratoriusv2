@@ -12,8 +12,9 @@ const Navbar = () => {
   const tabs = (
     <div className='tabs'>
       <div className='nav-tabs'>
-        <a href='#!'>Squad</a> &nbsp; | &nbsp;
-        <a href='#!'>Playing XI</a>
+        <a href='#!'>MY SQUAD</a>
+        {/* &nbsp; | &nbsp;
+        <a href='#!'>Playing XI</a> */}
       </div>
     </div>
   );
